@@ -26,10 +26,10 @@ exports.show = async function (req, res) {
   try {
     const product = await Product.findByPk(req.params.productId, {
       include: [
-      {
-        model: ProductCategory,
-        as: 'productCategory'
-      }]
+        {
+          model: ProductCategory,
+          as: 'productCategory'
+        }]
     }
     )
     res.json(product)
@@ -40,6 +40,10 @@ exports.show = async function (req, res) {
 
 exports.create = async function (req, res) {
   let newProduct = Product.build(req.body)
+  /* // Nuevo -----------------
+  newProduct.calorias = 9 * newProduct.grasas + 4 *
+  newProduct.carbohidratos + 4 * newProduct.proteinas
+  */ // Nuevo -----------------
   if (typeof req.file !== 'undefined') {
     newProduct.image = req.file.destination + '/' + req.file.filename
   }
@@ -47,7 +51,7 @@ exports.create = async function (req, res) {
     newProduct = await newProduct.save()
     res.json(newProduct)
   } catch (err) {
-      res.status(500).send(err)
+    res.status(500).send(err)
   }
 }
 
@@ -55,6 +59,12 @@ exports.update = async function (req, res) {
   if (typeof req.file !== 'undefined') {
     req.body.image = req.file.destination + '/' + req.file.filename
   }
+  /* // Nuevo -----------------
+  const grasas = req.body.grasas
+  const carbohidratos = req.body.carbohidratos
+  const proteinas = req.body.proteinas
+  req.body.calorias = 9 * grasas + 4 * carbohidratos + 4 * proteinas
+  */ // Nuevo -----------------
   try {
     await Product.update(req.body, { where: { id: req.params.productId } })
     const updatedProduct = await Product.findByPk(req.params.productId)

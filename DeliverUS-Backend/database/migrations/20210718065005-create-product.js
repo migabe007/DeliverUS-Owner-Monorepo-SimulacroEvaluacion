@@ -12,6 +12,30 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
+      /*
+      // Nuevo -----------------
+      grasas: {
+        allowNull: false,
+        type: Sequelize.DOUBLE,
+        defaultValue: 0.0
+      },
+      proteinas: {
+        allowNull: false,
+        type: Sequelize.DOUBLE,
+        defaultValue: 0.0
+      },
+      carbohidratos: {
+        allowNull: false,
+        type: Sequelize.DOUBLE,
+        defaultValue: 0.0
+      },
+      calorias: {
+        allowNull: false,
+        type: Sequelize.DOUBLE,
+        defaultValue: 0.0
+      },
+      // Nuevo -----------------
+      */
       description: {
         type: Sequelize.TEXT
       },

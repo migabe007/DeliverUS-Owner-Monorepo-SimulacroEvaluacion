@@ -16,13 +16,21 @@ module.exports = (sequelize, DataTypes) => {
         unityPrice: DataTypes.DOUBLE
       })
 
-      Product.belongsTo(models.Restaurant, { foreignKey: 'restaurantId', as: 'restaurant' , onDelete: 'cascade'})
+      Product.belongsTo(models.Restaurant, { foreignKey: 'restaurantId', as: 'restaurant', onDelete: 'cascade' })
       Product.belongsTo(models.ProductCategory, { foreignKey: 'productCategoryId', as: 'productCategory' })
       Product.belongsToMany(models.Order, { as: 'orders', through: OrderProducts })
     }
   }
   Product.init({
     name: DataTypes.STRING,
+    /*
+    // Nuevo -----------------
+    grasas: DataTypes.DOUBLE,
+    proteinas: DataTypes.DOUBLE,
+    carbohidratos: DataTypes.DOUBLE,
+    calorias: DataTypes.DOUBLE,
+    // Nuevo -----------------
+    */
     description: DataTypes.STRING,
     price: DataTypes.DOUBLE,
     image: DataTypes.STRING,

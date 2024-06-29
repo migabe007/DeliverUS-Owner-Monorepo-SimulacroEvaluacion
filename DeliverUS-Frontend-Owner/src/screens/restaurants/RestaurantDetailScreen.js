@@ -62,6 +62,13 @@ export default function RestaurantDetailScreen ({ navigation, route }) {
       >
         <TextRegular numberOfLines={2}>{item.description}</TextRegular>
         <TextSemiBold textStyle={styles.price}>{item.price.toFixed(2)}€</TextSemiBold>
+        <TextSemiBold textStyle={styles.price}> Grasas: {item.grasas ||
+          0.0}</TextSemiBold>
+        <TextSemiBold textStyle={styles.price}> Proteinas:
+            {item.proteinas || 0.0}</TextSemiBold>
+        <TextSemiBold textStyle={styles.price}> Carbohidratos
+            {item.carbohidratos || 0.0}</TextSemiBold>
+        <TextSemiBold textStyle={styles.price}> Calorias: {item.calorias || 0.0}</TextSemiBold>
         {!item.availability &&
           <TextRegular textStyle={styles.availability }>Not available</TextRegular>
         }

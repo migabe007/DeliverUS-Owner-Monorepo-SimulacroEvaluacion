@@ -19,7 +19,7 @@ module.exports = {
       [
       // Casa felix id=1
       // Starters id=1
-        { name: 'Ensaladilla', description: 'Tuna salad with mayonnaise', price: 2.5, image: process.env.PRODUCTS_FOLDER + '/ensaladilla.jpeg', order: 1, availability: true, restaurantId: 1, productCategoryId: 1 },
+        { name: 'Ensaladilla', grasas: 10, proteinas: 10, carbohidratos: 10, calorias: 10, description: 'Tuna salad with mayonnaise', price: 2.5, image: process.env.PRODUCTS_FOLDER + '/ensaladilla.jpeg', order: 1, availability: true, restaurantId: 1, productCategoryId: 1 },
         { name: 'Olives', description: 'Home made', price: 1.5, image: process.env.PRODUCTS_FOLDER + '/aceitunas.jpeg', order: 2, availability: true, restaurantId: 1, productCategoryId: 1 },
 
         // drinks id=3
@@ -167,7 +167,7 @@ module.exports = {
   createNProducts: (numProducts, restaurantId) => {
     const productsArray = []
     for (let i = 0; i < numProducts; i++) {
-      productsArray[i] = { name: 'Product #' + i, description: 'Description #' + i, price: i, image: process.env.PRODUCTS_FOLDER + '/agua.png', order: i, availability: true, restaurantId: restaurantId, productCategoryId: 5 }
+      productsArray[i] = { name: 'Product #' + i, description: 'Description #' + i, price: i, image: process.env.PRODUCTS_FOLDER + '/agua.png', order: i, availability: true, restaurantId, productCategoryId: 5 }
     }
     return productsArray
   }

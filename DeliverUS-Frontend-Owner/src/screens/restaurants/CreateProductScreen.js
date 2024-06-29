@@ -112,6 +112,18 @@ export default function CreateProductScreen ({ navigation, route }) {
                 label='Description:'
               />
               <InputItem
+                name='grasas'
+                label='Grasas:'
+                />
+                <InputItem
+                name='proteinas'
+                label='Proteinas:'
+                />
+                <InputItem
+                name='carbohidratos'
+                label='Carbohidratos'
+                />
+              <InputItem
                 name='price'
                 label='Price:'
               />
