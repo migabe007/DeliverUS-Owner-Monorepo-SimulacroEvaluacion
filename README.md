@@ -24,15 +24,33 @@ Linux/MacOS:
 
 ## Enunciado
 
-Una vez se ha puesto en marcha la primera versión de DeliverUS, los inversores han solicitado la inclusión de una nueva funcionalidad que consiste en ofrecer a los propietarios la posibilidad de promocionar sus restaurantes. Cada propietario sólo podrá promocionar uno de sus restaurantes.
+Evaluación individual laboratorio. Junio 2022.
 
-Un propietario podrá promocionar un restaurante de dos maneras distintas:
+Nutrientes saludables
 
-* En el formulario de creación de restaurante. Por defecto, se seleccionará la opción de no promocionado. Si el propietario indica que el nuevo restaurante debe estar promocionado, pero ya existían restaurantes promocionados del mismo propietario, al pulsar el botón `Save` se mostrará un error y no se creará el restaurante.
+Una vez se ha puesto en marcha la primera versión de DeliverUS, los inversores han solicitado la inclusión de una nueva funcionalidad que consiste en informar al cliente de los gramos de macronutrientes que contienen cada uno
+de los productos. Tras la reunión con el cliente, se ha establecido los siguientes requisitos:
 
-* En la pantalla de "Mis restaurantes", mediante un botón mostrado junto a cada restaurante, que permitirá mediante su pulsación promocionar el restaurante en cuestión. Si el propietario pulsa el botón para promocionar un nuevo restaurante y ya existían otros restaurantes promocionados del mismo dueño, se procederá a promocionar el restaurante indicado y se marcará como "no promocionado" el restaurante que lo fuese anteriormente. La aplicación debe pedir confirmación al propietario cuando se pulse el botón; utilice para ello el componente suministrado `ConfirmationModal`, similar al componente `DeleteModal` utilizado en clase.
+1.- Debido a la normativa reguladora de alimentación, se pide que se informe al cliente de la cantidad de carbohidratos, proteínas y grasas por cada 100 gramos de cada uno de los productos que están a la venta en DeliverUS.
 
-Además, los restaurantes promocionados aparecerán siempre al principio de los listados de restaurantes que se le presentan tanto a los propietarios como a los clientes. Además de presentarse al principio, los restaurantes promocionados deben destacarse visualmente, por lo que aparecerá una etiqueta de texto `¡En promoción!` con el color principal de la marca.
+2.- Dada la existencia de platos hipercalóricos que no están recomendados en una dieta saludable se pide que un plato no pueda contener más de 1000 calorías por 100g de producto. Para ello, sevusará la siguiente formula aproximada de cálculo energético
+Calorías producto = (grasas * 9) + (proteínas * 4) + (carbohidratos * 4)
+
+Se pide que:
+1.- Implemente los cambios que sean necesarios en el backend.
+2.- Implemente validación de servidor y cliente con los requisitos de calorías máximas.
+3.- Muestre los datos de calorías por 100g, carbohidratos, proteínas y grasas en cada uno de los productos que se muestran en la pantalla RestaurantDetailScreen.
+
+• Nota: No es necesario modificar los seeders. Recuerde que los valores numéricos enviados por el frontend, llegan al backend como string cuando se usan TextInputs en el componente InputItem. No olvide realizar un casting a float de dichos valores para que el backend los trate sin problema.
+
+Lugar de entrega: Enseñanza Virtual
+
+Procedimiento para la entrega:
+1. Elimine las carpetas node_modules de los proyectos de backend y frontend y la carpeta .expo del proyecto frontend.
+2. Cree un zip que incluya ambos proyectos.
+3. Avise a su profesor antes de realizar el envío.
+4. Cuando tenga el visto bueno de su profesor, envíe el fichero resultante a través de enseñanza virtual.
+5. Una vez enviado, elimine los proyectos al completo.
 
 ### Ejercicio 1
 
